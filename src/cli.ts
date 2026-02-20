@@ -21,7 +21,7 @@ function addGlobalOptions(cmd: Command): Command {
     .option("-q, --quiet", "Suppress text output, only save images", false)
     .option("--model <model>", "Model to use", "gemini-3-flash-preview")
     .option("--system <prompt>", "System instruction")
-    .option("--timeout <seconds>", "Request timeout in seconds", parseFloat);
+    .option("--timeout <seconds>", "Request timeout in seconds (default: 120)", parseFloat);
 }
 
 const analyzeCmd = program

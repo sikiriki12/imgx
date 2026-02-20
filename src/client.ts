@@ -19,8 +19,6 @@ export function buildConfig(opts: ImgxOptions) {
       includeThoughts: true,
     },
     ...(opts.system ? { systemInstruction: opts.system } : {}),
-    ...(opts.timeout
-      ? { httpOptions: { timeout: opts.timeout * 1000 } }
-      : {}),
+    httpOptions: { timeout: (opts.timeout ?? 120) * 1000 },
   };
 }

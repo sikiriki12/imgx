@@ -35,12 +35,12 @@ describe("buildConfig", () => {
     expect((config as any).systemInstruction).toBe("You are a helpful assistant");
   });
 
-  it("does not include httpOptions when no timeout", () => {
+  it("defaults timeout to 120s when not specified", () => {
     const config = buildConfig(defaultOpts());
-    expect("httpOptions" in config).toBe(false);
+    expect((config as any).httpOptions.timeout).toBe(120000);
   });
 
-  it("includes httpOptions.timeout in milliseconds when --timeout is set", () => {
+  it("uses custom timeout when --timeout is set", () => {
     const config = buildConfig(defaultOpts({ timeout: 30 }));
     expect((config as any).httpOptions.timeout).toBe(30000);
   });
