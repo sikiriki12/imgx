@@ -8,7 +8,7 @@ Gemini can analyze your images, write and run Python code to process them, and r
 
 ```bash
 # Global install (requires Bun)
-bun install -g .
+bun link && bun link imgx
 
 # Or compile to a standalone binary
 bun run build
