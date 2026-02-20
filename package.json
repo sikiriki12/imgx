@@ -1,0 +1,19 @@
+{
+  "name": "imgx",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "imgx": "src/cli.ts"
+  },
+  "scripts": {
+    "dev": "bun run src/cli.ts",
+    "build": "bun build --compile src/cli.ts --outfile imgx"
+  },
+  "dependencies": {
+    "@google/genai": "^1.5.0",
+    "commander": "^13.1.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
